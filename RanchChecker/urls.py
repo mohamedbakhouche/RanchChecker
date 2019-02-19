@@ -13,10 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from apiranch import views
+from django.conf.urls import url
 from django.contrib import admin
+from rest_framework.urlpatterns import format_suffix_patterns
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^$', include('apiranch.url')),
+    url(r'^osys/', views.osysList.as_view()),
+    url(r'^renderengienv/', views.rendengversList.as_view()),
+    url(r'^renderengien/', views.render_engienList.as_view()),
+    url(r'^pluginversion/', views.plugin_versionList.as_view()),
+    url(r'^plugin/', views.pluginList.as_view()),
+    url(r'^softwareVersion/', views.softwareVersionList.as_view()),
+    url(r'^software/', views.softwareList.as_view()),
+       
 ]
+urlpatterns = format_suffix_patterns(urlpatterns)
