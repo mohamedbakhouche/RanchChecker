@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.views import APIView
-from . models import osys, render_engien_version, render_engien, plugin_version, plugin, softwareVersion, software
+from . models import osys, render_engine_version, render_engine, plugin_version, plugin, softwareVersion, software
 from rest_framework.response import Response
 from rest_framework import status
-from . serializers import  osysSerializer, render_engien_versionSerializer, render_engienSerializer, plugin_versionSerializer, pluginSerializer, softwareVersionSerializer, softwareSerializer
+from . serializers import  osysSerializer, render_engine_versionSerializer, render_engineSerializer, plugin_versionSerializer, pluginSerializer, softwareVersionSerializer, softwareSerializer
 
 class osysList(APIView):
 
@@ -16,15 +16,15 @@ class osysList(APIView):
 class rendengversList(APIView):
     
     def get(self, request):
-        _model = render_engien_version.objects.all()
-        _serialize = render_engien_versionSerializer(_model, many=True)
+        _model = render_engine_version.objects.all()
+        _serialize = render_engine_versionSerializer(_model, many=True)
         return Response(_serialize.data)
 
 class render_engienList(APIView):
     
     def get(self, request):
-        _model = render_engien.objects.all()
-        _serialize = render_engienSerializer(_model, many=True)
+        _model = render_engine.objects.all()
+        _serialize = render_engineSerializer(_model, many=True)
         return Response(_serialize.data)
 
 class plugin_versionList(APIView):

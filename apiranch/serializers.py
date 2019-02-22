@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from . models import osys, render_engien_version, render_engien, plugin_version, plugin, softwareVersion, software
+from . models import osys, render_engine_version, render_engine, plugin_version, plugin, softwareVersion, software
 
 class osysSerializer(serializers.ModelSerializer):
     class Meta:
@@ -7,15 +7,15 @@ class osysSerializer(serializers.ModelSerializer):
         #fiels = ('os_name', 'os_version', 'os_bit')
         fields = '__all__'
 
-class render_engien_versionSerializer(serializers.ModelSerializer):
+class render_engine_versionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = render_engien_version
+        model = render_engine_version
         #fiels = ('renEngVer_name')
         fields = '__all__'
 
-class render_engienSerializer(serializers.ModelSerializer):
+class render_engineSerializer(serializers.ModelSerializer):
     class Meta:
-        model = render_engien
+        model = render_engine
         #fiels = ('render_engien_name', 'render_engien_version')
         fields = '__all__'
 
